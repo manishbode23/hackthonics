@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Health Incident</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f9;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:30px;
+width:400px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5dc9;
+}
+
+.success{
+color:green;
+text-align:center;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Report Health Incident</h2>
+
+<form onsubmit="return submitReport()">
+
+<label>Full Name</label>
+<input type="text" id="name" required>
+
+<label>Email</label>
+<input type="email" id="email" required>
+
+<label>City</label>
+<input type="text" id="city" required>
+
+<label>Type of Issue</label>
+<select id="issue">
+<option>Heart Symptoms</option>
+<option>Cancer Symptoms</option>
+<option>General Health Problem</option>
+<option>Other</option>
+</select>
+
+<label>Describe Symptoms</label>
+<textarea id="description" rows="4" required></textarea>
+
+<button type="submit">Submit Report</button>
+
+<p class="success" id="message"></p>
+
+</form>
+
+</div>
+
+<script>
+
+function submitReport(){
+
+let name=document.getElementById("name").value;
+
+document.getElementById("message").innerHTML=
+"Thank you "+name+", your incident report has been submitted.";
+
+return false;
+
+}
+
+</script>
+
+</body>
+
+</html>
